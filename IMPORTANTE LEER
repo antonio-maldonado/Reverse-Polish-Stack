@@ -1,0 +1,73 @@
+compilar:
+
+g++ -Wall tarea.cpp stack.cpp -o test && ./test
+
+el archivo "aux.txt" es el que contiene la expresión a calcular
+
+la expresión se tiene que introducir con espacios, por ejemplo:
+5 3 +
+
+El programa es capaz de convertir la expresión en forma infija a postfija
+Es decir:
+es lo mismo introducir: 
+5 + 3 
+y
+5 3 +
+
+El programa detecta si expresión está en forma infija o no lo está
+
+El programa solo acepta números de 1 dígito, es decir, el programa no acepta:
+10 + 15
+
+De preferencia no hacer operaciones que dé como resultado más de 127 o -128
+Esto es porque el char es de 1 Byte es decir 8 bits y con 8 bits solo se pueden representar números en binario en signo-magnitud desde -128 hasta 127 (En binario 10000000=-128 a 01111111=127 en signo-magnitud)
+
+algunas expresiones evaluadas:
+
+ejemplo 1
+forma infija
+
+5 + ( ( 1 + 2 ) * 4 ) - 3
+
+forma polaca inversa
+
+5 1 2 + 4 * + 3 -
+
+ejemplo 2
+forma infija
+
+( 3 + 9 ) * 5
+
+forma pola inversa
+
+3 9 5 + *
+
+ejemplo 3
+forma infija
+
+3 * 4 + 5 * 6
+
+forma polaca inversa
+
+3 4 * 5 6 * +
+
+ejemplo 4
+forma infija
+
+6 + ( ( 3 + 4 ) * 5 ) - 7
+
+forma polaca inversa
+
+6 3 4 + 5 * + 7 -
+
+ejemplo 5
+forma infija
+
+4 * ( 5 + 6 - ( 8 / 2 ^ 3 ) - 7 ) - 1
+
+forma polaca inversa
+
+4 5 6 + 8 2 3 ^ / - 7 - * 1 -
+
+
+
